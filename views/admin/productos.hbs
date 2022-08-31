@@ -1,0 +1,54 @@
+<h1 class="text-center" style="padding: 30px;">Administrar Productos</h1>
+<div class="container" style="margin-top: 30px; ">
+
+    <div class="row">
+        <div class="col-7">
+            <h3 class="text-end">Listado de Productos</h3>
+        </div>
+        <div class="col-5 text-end">
+            <a href="/admin/productos/agregar" class="btn btn-succes" style="background-color: rgb(14, 179, 6)"> <i class="fa fa-plus" aria-hidden="true" ></i>
+                Nuevo +</a>
+        </div>
+    </div>
+ 
+
+    <div class="row" >
+        <div class="col">
+            <table class="table" style="">
+                <thead>
+                    <tr class="table" style="border: solid black; background-color: rgb(188, 235, 242);">
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col" class="text-end">Imágen</th>
+                        <th scope="col" class="text-end">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{!-- recorrer --}}
+                    {{#each productos}}
+
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{titulo}}</td>
+                        <td class="text-end">{{{imagen}}}</td>
+                        <td class="text-end">
+                            <a href="/admin/productos/modificar/{{id}}" class="btn btn-secondary">
+                                <i class="fa fa-pencil" aria-hidden="true">
+                                </i> </a>
+                            <a href="/admin/productos/eliminar/{{id}}" class="btn btn-secondary">
+                                <i class="fa fa-trash-can" aria-hidden="true">
+                                </i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+ <div class="row">
+        <p class="text-end">
+            <a class="btn btn-danger" href="/admin/login/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a>
+        </p>
+    </div>
+</div>

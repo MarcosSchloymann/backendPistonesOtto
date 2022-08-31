@@ -1,0 +1,14 @@
+<h1 style="text-align: center;">{{title}}</h1>
+{{#if conocido}}
+<p style="text-align: center;">Hola {{nombre}}, bienvenido <a href="/salir">Salir</a></p>
+
+{{/if}}
+
+{{#unless conocido}}
+<p style="text-align: center;">Por favor, vuelva a intentar</p>
+
+<form action="/ingresar" method="post" style="text-align: center;">
+<input type="text" name="nombre" style="text-align: center;"> <button>ingresar</button>
+</form>
+
+{{/unless}}

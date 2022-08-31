@@ -1,0 +1,38 @@
+<div class="contenedor"
+    style="display: flex; flex-direction: column; align-items: center;margin-top:10px; padding: 30px;">
+    <div style="width: 600px;">
+        <h1 class="text-center">Modificar Pedido</h1>
+        <form action="/admin/seguimiento/modificar_seguimiento" method="post" style="display: flex; flex-direction:column; justify-content:center; align-content:center">
+           <input type="hidden" value="{{seguimiento.id}}" name="id">
+            <div class="row mb-3" style="padding: 20px;">
+                <label for="inputEmail3" class="col-sm-2 col-form-label" style="font-size: 16px;">Número</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Número de Pedido" name="numero" value="{{seguimiento.numero}}">
+                </div>
+            </div>
+           <div class="row mb-3" style="padding: 20px;">
+                <div class="text-center">
+                    <select class="form-select text-center" aria-label="" name="estado">
+                         <option>Selecionar Estado de Pedido</option>
+                        <option value="1">En espera de fabricación</option>
+                        <option value="2">En fabricación</option>
+                        <option value="3">Producto Terminado</option>
+                        <option value="4">Producto Despachado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-10" style="padding: 20px;">
+            <div for="inputPassword3" class="col-sm-2 col-form-label"
+                style="font-size: 16px;">Comentarios</div>
+                        <textarea type="text" name="comentario" id="" cols="75" rows="10"></textarea>
+            </div>
+
+            <div class="row mb-3">
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-left:500px">Guardar</button>
+        </form>
+        {{#if error}}
+        <p>{{message}}</p>
+        {{/if}}
+    </div>
+</div>

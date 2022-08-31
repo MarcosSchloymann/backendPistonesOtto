@@ -1,0 +1,62 @@
+<h1 class="text-center" style="padding: 30px;">Administrar Pedidos</h1>
+
+
+{{!-- <form action="/admin/seguimiento/buscar" class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Buscar Pedido" aria-label="Buscar">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form> --}}
+
+<div class="container" style="margin-top: 30px; ">
+
+    <div class="row">
+        <div class="col-7">
+            <h3 class="text-end">Listado de Pedidos</h3>
+        </div>
+        <div class="col-5 text-end">
+            <a href="/admin/seguimiento/agregar_seguimiento" class="btn btn-succes"
+                style="background-color: rgb(14, 179, 6)"> <i class="fa fa-plus" aria-hidden="true"></i>
+                Nuevo +</a>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <table class="table" style="">
+                <thead>
+                    <tr class="table" style="border: solid black; background-color: rgb(188, 235, 242);">
+                        <th scope="col">#</th>
+                        <th scope="col">Pedido</th>
+                        <th scope="col" class="text-end">Estado</th>
+                        <th scope="col" class="text-end">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{!-- recorrer --}}
+                    {{#each seguimientos}}
+
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{numero}}</td>
+                        <td class="text-end">{{estado}}</td>
+                        <td class="text-end">
+                            <a href="/admin/seguimiento/modificar_seguimiento/{{id}}" class="btn btn-secondary">
+                                <i class="fa fa-pencil" aria-hidden="true">
+                                </i> </a>
+                            <a href="/admin/seguimiento/eliminar_seguimiento/{{id}}" class="btn btn-secondary">
+                                <i class="fa fa-trash-can" aria-hidden="true">
+                                </i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <p class="text-end">
+            <a class="btn btn-danger" href="/admin/login/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a>
+        </p>
+    </div>
+</div>
